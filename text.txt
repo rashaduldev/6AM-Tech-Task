@@ -1,0 +1,187 @@
+
+
+/*  */
+/* General Styling */
+.main-container {
+    width: 100%;  
+}
+.sidebar-banner{
+    max-width: 1201;
+    width: 100%; 
+    margin: 0 auto;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    /* background: red; */
+}
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h3 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+}
+
+.sidebar ul li:hover {
+    color: blue;
+}
+
+.slider-section{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    max-width: 620px;
+    height: 466px;
+    gap: 8px;
+    height: 310px;
+}
+/* Banner Section */
+.banner-section {
+    display: flex; 
+    gap: 10px;
+}
+.cyber-img{
+    width: 285;
+    height: 466;
+    border-radius: 5px;
+
+}
+.slider {
+    width: 620px;
+    height: 310px !important;
+    overflow: hidden;
+    border-radius: 4.13px;
+}
+.slider img{
+    width: 100%;
+    height: 100%;
+}
+
+.slider-img {
+    width: 620px;
+    height: 100%;
+    object-fit: cover;
+    display: block; 
+    margin: 0; 
+    padding: 0; 
+}
+
+
+/* Ads Section */
+.adssection {
+    display: flex;
+    gap: 5px;
+}
+.ads-section{
+    width: 310px;
+    height: 155px;
+    
+}
+.ads-section img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        border-right: none;
+    }
+
+    .banner-section {
+        max-width: 100%;
+    }
+
+    .ads-section {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .ads-section img {
+        width: 48%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar ul li {
+        text-align: center;
+    }
+
+    .ads-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ads-section img {
+        width: 80%;
+    }
+}
+
+ <div class="main-container">
+       <div class="sidebar-banner">
+             <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>FIND WHAT YOU NEED</h3>
+            <ul>
+                <li>Audio</li>
+                <li>Smartphone</li>
+                <li>Wearable</li>
+                <li>TV & Home Appliance</li>
+                <li>Mobile Accessories</li>
+                <li>Computer & Office</li>
+                <li>Camera Accessories</li>
+                <li>Network Components</li>
+                <li>Laptop, Tabs & Notebooks</li>
+                <li><a href="#">View all</a></li>
+            </ul>
+        </div>
+    
+        <!-- Banner Section -->
+        <div class="banner-section">
+            <div class="slider-section">
+                <div class="slider">
+                        <img class="slider-img" src="./img/slider1.png" alt="Special Offer">
+                </div>
+                <div class="adssection">
+                    <div class="ads-section">
+                        <img src="./img/slider2.png" alt="Discount Offer">
+                    </div>
+                    <div class="ads-section">
+                        <img src="./img/slider3.png" alt="Discount Offer">
+                    </div>
+                </div>
+            </div>
+            <div class="cyber-img">
+                <img src="./img/cyber.png" alt="">
+            </div>
+        </div>
+       </div>
+    </div>
