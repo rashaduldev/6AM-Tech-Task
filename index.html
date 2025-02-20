@@ -17,17 +17,31 @@
     <div class="top-nav">
        <div class="top-bar">
         <div class="contact-info">
-            <img src="img/phone-call-line.png" alt="phone-call"></i> 
+            <img src="img/phone-call-line.png" alt="phone-call">
             <p>+90-327-5345543</p>
         </div>
         <div class="right-section">
-            <p class="usd">$ USD <i class="fas fa-chevron-down"></i></p>
-            <div class="language">
-                <img src="img/flag.png" alt="flag">
-                <p>English</p>
-                <i class="fas fa-chevron-down"></i></div>
+            <!-- Currency Dropdown -->
+            <div class="dropdown">
+                <select class="custom-select">
+                    <option value="usd">$ USD</option>
+                    <option value="bdt">৳ BDT</option>
+                    <option value="euro">€ Euro</option>
+                </select>
+            </div>        
+            
+            <!-- Language Dropdown -->
+            <div class="dropdown">
+                <select id="dropdown-language" class="custom-select">
+                    <option value="english">🏳️‍⚧️ English</option>
+                    <option value="bangla">🏳️ বাংলা</option>
+                    <option value="hindi">🚩 हिन्दी</option>
+                </select>
+            </div>
+        
             <a class="becomeaseller" href="#">Become a seller</a>
         </div>
+        
        </div>
     </div>
 
@@ -103,6 +117,21 @@
                         </div>
                     </div>
                 </nav>
+            </div>
+        </div>
+        <div class="drawer-container">
+            <input type="checkbox" id="drawer-toggle" class="drawer-checkbox">
+            <label for="drawer-toggle" class="drawer-icon">☰</label>
+            <!-- Drawer -->
+            <div class="drawer">
+                <label for="drawer-toggle" class="close-btn">✖</label>
+                <p>Drawer Content Here</p>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
         </div>
     </header>
