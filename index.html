@@ -6,9 +6,7 @@
     <title>6AM Tech Task</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -47,7 +45,7 @@
                 </div>
 
                 <div class="head-right-img">
-                    <img src="./img/right-image.png" alt="">
+                    <img src="./img/right-image.png" alt="image">
                 </div>
             </div>
             <!-- second header -->
@@ -150,15 +148,86 @@
             </div>
         </div>
     </div>
-    <!-- <script>
-        $(document).ready(function(){
-            $('.slider').slick({
-                autoplay: true,
-                autoplaySpeed: 3000,
-                dots: true,
-                arrows: false
-            });
-        });
-    </script> -->
+    <!-- Flash Deal -->
+     <!--  -->
+    <div class="flash-container">
+        <div class="flash-card">
+            <img src="./img/flash-deal.png" alt="flash-deal img">
+            <div class="hurry-up">
+                <p>Hurry up !</p>
+                <span>Offer ends in:</span>
+            </div>
+          
+          <div class="flash-time-container">
+            <div class="flash-time">
+                <p>23</p>
+                <span class="flash-time-span">Days</span>
+            </div>
+            <div class="flash-time">
+                <p>23</p>
+                <span class="flash-time-span">hours</span>
+            </div>
+            <div class="flash-time">
+                <p>23</p>
+                <span class="flash-time-span">mins</span>
+            </div>
+            <div class="flash-time">
+                <p>23</p>
+                <span class="flash-time-span">sec</span>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="product-cards">
+            <div>
+                <img src="" alt="product image">
+                <p>Rating</p>
+                <p>Name</p>
+                <div class="price">
+                    <del>22</del>
+                    <p>price</p>
+                </div>
+            </div>
+        </div> -->
+        <div class="slider-container">
+            <button id="prevBtn" class="nav-btn">‹</button>
+            <div class="card-wrapper">
+                <div class="card-slider">
+                    <div class="card">
+                        <img src="./img/products/headphone.png" alt="P4 Wireless Bluetooth">
+                        <h3>P4 Wireless Bluetooth</h3>
+                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                    </div>
+                    <div class="card">
+                        <img src="./img/products/smartwatch.png" alt="A1 Smart Watch">
+                        <h3>A1 Smart Watch</h3>
+                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                    </div>
+                    <div class="card">
+                        <img src="./img/products/wireless-headphone.png" alt="Lenovo AirPods Pro">
+                        <h3>Lenovo AirPods Pro</h3>
+                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                    </div>
+                    <div class="card">
+                        <img src="./img/products/watch.png" alt="Zeiss VR One Plus">
+                        <h3>Zeiss VR One Plus</h3>
+                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                    </div>
+                    <div class="card">
+                        <img src="./img/products/headphone.png" alt="XO Mobile">
+                        <h3>XO Mobile</h3>
+                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                    </div>
+                    <div class="card">
+                        <img src="./img/products/smartwatch.png" alt="Gaming Headset">
+                        <h3>Gaming Headset</h3>
+                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                    </div>
+                </div>
+            </div>
+            <button id="nextBtn" class="nav-btn">›</button>
+        </div>
+    </div>
+     <!--  -->
+     <script src="index.js"></script>
 </body>
 </html>
