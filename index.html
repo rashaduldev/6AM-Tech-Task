@@ -14,12 +14,16 @@
     <div class="top-nav">
        <div class="top-bar">
         <div class="contact-info">
-            <i class="fas fa-phone"></i> +90-327-5345543
+            <img src="./img/phone-call-line.png" alt=""></i> 
+            <p>+90-327-5345543</p>
         </div>
         <div class="right-section">
-            <span>$ USD <i class="fas fa-chevron-down"></i></span>
-            <span>English <i class="fas fa-chevron-down"></i></span>
-            <a href="#">Become a seller</a>
+            <p class="usd">$ USD <i class="fas fa-chevron-down"></i></p>
+            <div class="language">
+                <img src="./img/flag.png" alt="">
+                <p>English</p>
+                <i class="fas fa-chevron-down"></i></div>
+            <a class="becomeaseller" href="#">Become a seller</a>
         </div>
        </div>
     </div>
@@ -70,9 +74,9 @@
                         <li class="dropdown">
                             <a href="#">BRANDS <i class="fas fa-chevron-down"></i></a>
                         </li>
-                        <li class="offer-badge"><a href="#">DISCOUNTED PRODUCTS <span class="">
-                            <img src="./img/badge.png" alt="">
-                        </span></a></li>
+                        <li class="offer-badge"><a href="#">DISCOUNTED PRODUCTS 
+                            
+                        </a><img src="./img/badge.png" alt="badge"></li>
                     </ul>
                     <div class="user-actions">
                         <div class="login">
@@ -177,50 +181,125 @@
             </div>
           </div>
         </div>
-        <!-- <div class="product-cards">
-            <div>
-                <img src="" alt="product image">
-                <p>Rating</p>
-                <p>Name</p>
-                <div class="price">
-                    <del>22</del>
-                    <p>price</p>
-                </div>
-            </div>
-        </div> -->
         <div class="slider-container">
             <button id="prevBtn" class="nav-btn">‹</button>
             <div class="card-wrapper">
                 <div class="card-slider">
                     <div class="card">
-                        <img src="./img/products/headphone.png" alt="P4 Wireless Bluetooth">
-                        <h3>P4 Wireless Bluetooth</h3>
-                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                        <div class="child-card">
+                            <img src="./img/products/headphone.png" alt="P4 Wireless Bluetooth">
+                        <p class="discount">-20%</p>
+                        <div class="rating-container">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>(10)</p>
+                        </div>
+                        <p class="product-name">Morning Mart</p>
+                        <p class="product-description">P4 Wireless Bluetooth Headphone with FM Stereo Radio</p>
+                        <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
+                        </div>
                     </div>
                     <div class="card">
-                        <img src="./img/products/smartwatch.png" alt="A1 Smart Watch">
-                        <h3>A1 Smart Watch</h3>
-                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                        <div class="child-card">
+                            <img src="./img/products/smartwatch.png" alt="P4 Wireless Bluetooth">
+                        <p class="discount">-20%</p>
+                        <img class="producttopright" src="./img/products/topright.png" alt="producttop">
+                        <div class="rating-container">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>(10)</p>
+                        </div>
+                        <p class="product-name">Morning Mart</p>
+                        <p class="product-description">A1 Smart Watch Pedometer Digital Analog Sports</p>
+                        <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
+                        </div>
                     </div>
                     <div class="card">
-                        <img src="./img/products/wireless-headphone.png" alt="Lenovo AirPods Pro">
-                        <h3>Lenovo AirPods Pro</h3>
-                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                        <div class="child-card">
+                            <img src="./img/products/wireless-headphone.png" alt="P4 Wireless Bluetooth">
+                        <p class="discount">-20%</p>
+                        <div class="rating-container">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>(10)</p>
+                        </div>
+                        <p class="product-name">Morning Mart</p>
+                        <p class="product-description">Lenovo AirPods Pro - Bluetooth Headphone</p>
+                        <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
+                        </div>
                     </div>
                     <div class="card">
-                        <img src="./img/products/watch.png" alt="Zeiss VR One Plus">
-                        <h3>Zeiss VR One Plus</h3>
-                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                        <div class="child-card">
+                            <img src="./img/products/watch.png" alt="P4 Wireless Bluetooth">
+                        <p class="discount">-20%</p>
+                        <img class="productcart" src="./img/products/inactive.png" alt="productcart">
+                        <div class="rating-container">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>(10)</p>
+                        </div>
+                        <p class="product-name">Morning Mart</p>
+                        <p class="product-description">Zeiss VR One Plus Virtual Reality Headset for Smartphones</p>
+                        <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
+                        </div>
                     </div>
                     <div class="card">
-                        <img src="./img/products/headphone.png" alt="XO Mobile">
-                        <h3>XO Mobile</h3>
-                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                        <div class="child-card">
+                            <img src="./img/products/smartwatch.png" alt="P4 Wireless Bluetooth">
+                        <p class="discount">-20%</p>
+                        <div class="rating-container">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>(10)</p>
+                        </div>
+                        <p class="product-name">Morning Mart</p>
+                        <p class="product-description">XO mobXO mobXO mobXO mob</p>
+                        <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
+                        </div>
                     </div>
                     <div class="card">
-                        <img src="./img/products/smartwatch.png" alt="Gaming Headset">
-                        <h3>Gaming Headset</h3>
-                        <p><span class="old-price">$155</span> <span class="new-price">$125</span></p>
+                        <div class="child-card">
+                            <img src="./img/products/watch.png" alt="P4 Wireless Bluetooth">
+                        <p class="discount">-20%</p>
+                        <div class="rating-container">
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p>(10)</p>
+                        </div>
+                        <p class="product-name">Morning Mart</p>
+                        <p class="product-description">P4 Wireless Bluetooth Headphone with FM Stereo Radio</p>
+                        <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
+                        </div>
                     </div>
                 </div>
             </div>

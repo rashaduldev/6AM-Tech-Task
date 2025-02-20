@@ -18,3 +18,13 @@ $(document).ready(function(){
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const descriptions = document.querySelectorAll(".product-description");
+    descriptions.forEach(des => {
+        let words = des.innerText.split(" ");
+        if (words.length > 3) {
+            des.innerText = words.slice(0, 3).join(" ") + " ...";
+        }
+    });
+});
