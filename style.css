@@ -1,16 +1,12 @@
-/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: Mulish;
 }
 
 body {
     background-color: #FFFFFF;
-    /* max-width: 1440px;
-    width: 100%; 
-    margin: 0 auto; */
 }
 .contact-info{
     display: flex;
@@ -524,10 +520,6 @@ body {
         width: 100%;
         justify-content: center;
     }
-    .nav-links {
-        display: none;
-    }
-
     .right-menu {
         flex-direction: column;
         gap: 8px;
@@ -549,11 +541,16 @@ body {
         height: 16px;
         font-size: 10px;
     }
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
 }
 
 /* Main container All css here [Default,mobile and tablet] */
 
-/* Default Styles */
+/* Default */
 .main-container {
     width: 100%;
     max-width: 1201px;
@@ -616,17 +613,58 @@ body {
     width: fit-content;
     font-size: 14px;
 }
+.img-slider-container {
+    position: relative;
+    width: 100%; 
+    max-width: 620px; 
+    overflow: hidden;
+    margin: auto;
+}
 
-/* Parent Ads */
-.parent-ads {
+.img-card-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; 
+}
+
+.imgcard {
+    flex: 0 0 100%;
+    text-align: center;
     width: 620px;
     height: 310px;
 }
 
-.parent-ads img {
+.imgcard img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 45%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    margin: 5px;
+    display: inline-block;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #1455AC;
+}
+
+/* Parent Ads */
+.parent-ads {
+   display: flex;
+   flex-direction: column;
 }
 
 .child-ads {
@@ -694,7 +732,6 @@ body {
     .parent-ads {
         width: 100%;
     }
-
     .child-ads {
         flex-direction: row;
         flex-wrap: wrap;
@@ -777,6 +814,17 @@ body {
     .cyber-img img {
         width: 100%;
         height: auto;
+    }
+    .imgcard {
+        flex: 0 0 100%;
+        text-align: center;
+        width: 620px;
+        height: 310px;
+    }
+    
+    .imgcard img {
+        width: 100%;
+        height: 100%;
     }
 }
 /*  */
@@ -887,22 +935,24 @@ body {
 .rating-container{
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 16px;
+    margin-top: -6px;
+    margin-bottom: 4px; 
 }
-.rating-container p{
+.tennumber{
     color: #b9b9b967;
-    margin: 8px 0;
+    margin-top: 10px;
 }
 .rating{
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
     justify-content: start;
     color: #FFBA49;
 }
 .rating i{
-    width: 14px;
-    height: 14px;
+    width: 8px;
+    height: 8px;
 }
 .product-name{
     text-align: start;
@@ -977,6 +1027,7 @@ body {
     color: white;
     width: 39px;
     height: 39px;
+    border: none;
     border-radius: 45px;
     cursor: pointer;
     font-size: 26px;
@@ -1005,7 +1056,17 @@ body {
     }
 
     .card {
-        min-width: 45%;
+        min-width: 40%;
+        max-width: 50%;
+        scroll-snap-align: start;
+    }
+    .product-description{
+        display: flex;
+        justify-content: start;
+    }
+    .card-slider{
+        margin-top: 12px;
+        width: 100%;
     }
 }
 
@@ -1031,12 +1092,12 @@ body {
     }
 
     .card {
-        min-width: 80%;
-        max-width: 90%;
+        min-width: 40%;
+        max-width: 50%;
         scroll-snap-align: start;
     }
 
     .nav-btn {
-        display: none;
+        display: none !important;
     }
 }
