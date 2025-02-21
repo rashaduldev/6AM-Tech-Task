@@ -33,7 +33,7 @@
             <!-- Language Dropdown -->
             <div class="dropdown">
                 <select id="dropdown-language" class="custom-select">
-                    <option value="english">🏳️‍⚧️ English</option>
+                    <option value="english">🏳️‍⚧️<img src="img/flag/en.png" alt=""> English</option>
                     <option value="bangla">🏳️ বাংলা</option>
                     <option value="hindi">🚩 हिन्दी</option>
                 </select>
@@ -53,48 +53,89 @@
                 <div class="logo">
                     <img src="./img/6vally-logo.png" alt="6valley">
                 </div>
-
                 <div class="search-container">
-                    <button class="menu-btn">
-                        <i class="fas fa-bars"></i>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <input type="text" placeholder="Search for items or store..." class="search-input">
+                    <!-- Dropdown -->
+                    <div class="dropdown">
+                        <button class="dropdown-btn" id="dropdownButton">Categories <i class="fas fa-chevron-down"></i></button>
+                        <ul class="dropdown-menu" id="dropdownMenu">
+                            <li data-value="Electronics">Audio</li>
+                            <li data-value="Clothing">Smartphone</li>
+                            <li data-value="Home & Kitchen">Wearable</li>
+                            <li data-value="Books">TV & Home Appliance</li>
+                            <li data-value="Toys & Games">Mobile Accessories</li>
+                            <li data-value="Toys & Games">Computer & Office</li>
+                            <li data-value="Toys & Games">Camera Accessories</li>
+                            <li data-value="Toys & Games">Network Components</li>
+                            <li data-value="Toys & Games">Laptop, Tabs & Notebooks</li>
+                        </ul>
+                    </div>
+                
+                    <!-- Search Input -->
+                    <input type="text" class="search-input" placeholder="Search for items...">
+                
+                    <!-- Search Button -->
                     <button class="search-btn">
                         <i class="fas fa-search"></i>
                     </button>
                 </div>
-
                 <div class="head-right-img">
-                    <img src="./img/right-image.png" alt="image">
+                    <img src="img/right-image.png" alt="image">
                 </div>
             </div>
             <!-- second header -->
             <div class="second-header">
                 <nav class="nav-container">
-                    <div class="category-menu">
+                    <!-- Browse Category -->
+                    <div class="web-category-menu">
                         <button class="category-btn">
                             <i class="fas fa-bars"></i>
-                             <p>BROWSE CATEGORY </p>
-                             <i class="fas fa-chevron-down"></i>
+                            <p>BROWSE CATEGORY</p>
+                            <i class="fas fa-chevron-down"></i>
                         </button>
+                        <ul class="dropdown-content">
+                            <li data-value="Electronics">Audio</li>
+                            <li data-value="Clothing">Smartphone</li>
+                            <li data-value="Home & Kitchen">Wearable</li>
+                            <li data-value="Books">TV & Home Appliance</li>
+                            <li data-value="Toys & Games">Mobile Accessories</li>
+                            <li data-value="Toys & Games">Computer & Office</li>
+                            <li data-value="Toys & Games">Camera Accessories</li>
+                            <li data-value="Toys & Games">Network Components</li>
+                            <li data-value="Toys & Games">Laptop, Tabs & Notebooks</li>
+                        </ul>
                     </div>
             
+                    <!-- Navigation Links -->
                     <ul class="nav-links">
                         <li><a href="#">HOME</a></li>
                         <li class="dropdown">
                             <a href="#">OFFERS <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-content">
+                                <li><a href="#">Offer 1</a></li>
+                                <li><a href="#">Offer 2</a></li>
+                            </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#">STORES <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-content">
+                                <li><a href="#">Store 1</a></li>
+                                <li><a href="#">Store 2</a></li>
+                            </ul>
                         </li>
                         <li class="dropdown">
                             <a href="#">BRANDS <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-content">
+                                <li><a href="#">Brand 1</a></li>
+                                <li><a href="#">Brand 2</a></li>
+                            </ul>
                         </li>
-                        <li class="offer-badge"><a href="#">DISCOUNTED PRODUCTS 
-                            
-                        </a><img src="img/badge.png" alt="badge"></li>
+                        <li class="offer-badge">
+                            <a href="#">DISCOUNTED PRODUCTS</a>
+                            <img src="img/badge.png" alt="badge">
+                        </li>
                     </ul>
+            
+                    <!-- Right Section: Login/Register + Icons -->
                     <div class="user-actions">
                         <div class="login">
                             <i class="fas fa-user"></i>
@@ -119,58 +160,173 @@
                 </nav>
             </div>
         </div>
-        <div class="drawer-container">
-            <input type="checkbox" id="drawer-toggle" class="drawer-checkbox">
-            <label for="drawer-toggle" class="drawer-icon">☰</label>
-            <!-- Drawer -->
-            <div class="drawer">
-                <label for="drawer-toggle" class="close-btn">✖</label>
-                <p>Drawer Content Here</p>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
+        <!-- Drawer Container (Mobile Only) -->
+        <div class="drawer-parent">
+            <div class="drawer-child">
+                <div class="drawer-container">
+                    <div class="drawer-icon" id="drawer-toggle">☰</div>
+                    <div class="overlay" id="overlay"></div>
+                
+                    <!-- Drawer Content -->
+                    <div class="drawer" id="drawer">
+                        <div class="close-btn" id="close-drawer">✖</div>
+                
+                        <!-- Search Bar -->
+                       <div class="mobile-6valley">
+                            <img src="img/6vally-logo.png" alt="6valley">
+                        </div>
+                
+                        <!-- Navigation Links -->
+                        <ul class="drawer-links">
+                            <li><a href="#">Home</a></li>
+                
+                            <!-- Collapsible Categories -->
+                            <li class="drawer-dropdown">
+                                <button class="category-toggle">Categories <i class="fas fa-chevron-down"></i></button>
+                                <ul class="category-menu">
+                                    <li><a href="#">Audio</a></li>
+                                    <li><a href="#">Smartphone</a></li>
+                                    <li><a href="#">Wearable</a></li>
+                                    <li><a href="#">TV & Home Appliance</a></li>
+                                    <li><a href="#">Mobile Accessories</a></li>
+                                    <li><a href="#">Computer & Office</a></li>
+                                    <li><a href="#">Camera Accessories</a></li>
+                                    <li><a href="#">Network Components</a></li>
+                                    <li><a href="#">Laptop, Tabs & Notebooks</a></li>
+                                </ul>
+                            </li>
+                
+                            <li class="drawer-dropdown">
+                                <button class="category-toggle">Offers <i class="fas fa-chevron-down"></i></button>
+                                <ul class="category-menu">
+                                    <li><a href="#">Offer1</a></li>
+                                    <li><a href="#">Offer2</a></li>
+                                </ul>
+                            </li>
+                            <li class="drawer-dropdown">
+                                <button class="category-toggle">Stores <i class="fas fa-chevron-down"></i></button>
+                                <ul class="category-menu">
+                                    <li><a href="#">Store1</a></li>
+                                    <li><a href="#">Store2</a></li>
+                                </ul>
+                            </li>
+                            <li class="drawer-dropdown">
+                                <button class="category-toggle">Brands <i class="fas fa-chevron-down"></i></button>
+                                <ul class="category-menu">
+                                    <li><a href="#">Brand1</a></li>
+                                    <li><a href="#">Brand2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Discounted Products</a></li>
+                        </ul>
+                        <div class="mobile-auth">
+                           <button>Login/Register</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="drawer-i">
+                    <i class="fas fa-user"></i>
+                </div>
+              </div>
+                <div class="drawer-search">
+                    <input type="text" class="search-inputt" placeholder="Search for items...">
+                    <button class="search-btn-mobile"><i class="fas fa-search"></i></button>
+                </div>
         </div>
     </header>
     <!-- Main container -->
     <div class="main-container">
-        <h5>FIND WHAT YOU NEED</h3>
+        <h5>FIND WHAT YOU NEED</h5>
         <div class="parent-container">
             <div>
                 <div class="sidebar">
                     <ul>
-                        <li>Audio 
-                            <i class="fa-solid fa-angle-right"></i></li>
-                        <li>Smartphone
-                            <i class="fa-solid fa-angle-right"></i>
+                        <li>
+                            Audio <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>Headphones</li>
+                                <li>Speakers</li>
+                                <li>Microphones</li>
+                                <li>Soundbars</li>
+                            </ul>
                         </li>
-                        <li>Wearable
-                            <i class="fa-solid fa-angle-right"></i>
+                        <li>
+                            Smartphone <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>Android Phones</li>
+                                <li>iPhones</li>
+                                <li>Feature Phones</li>
+                                <li>Gaming Phones</li>
+                            </ul>
                         </li>
-                        <li>TV & Home Appliance
-                            <i class="fa-solid fa-angle-right"></i>
+                        <li>
+                            Wearable <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>Smartwatches</li>
+                                <li>Fitness Bands</li>
+                                <li>VR Headsets</li>
+                                <li>Smart Glasses</li>
+                            </ul>
                         </li>
-                        <li>Mobile Accessories
-                            <i class="fa-solid fa-angle-right"></i>
+                        <li>
+                            TV & Home Appliance <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>LED TVs</li>
+                                <li>Refrigerators</li>
+                                <li>Washing Machines</li>
+                                <li>Microwaves</li>
+                            </ul>
                         </li>
-                        <li>Computer & Office
-                            <i class="fa-solid fa-angle-right"></i>
+                        <li>
+                            Mobile Accessories <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>Chargers</li>
+                                <li>Phone Cases</li>
+                                <li>Screen Protectors</li>
+                                <li>Power Banks</li>
+                            </ul>
                         </li>
-                        <li>Camera Accessories
-                            <i class="fa-solid fa-angle-right"></i>
+                        <li>
+                            Computer & Office <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>Monitors</li>
+                                <li>Keyboards</li>
+                                <li>Printers</li>
+                                <li>Office Chairs</li>
+                            </ul>
                         </li>
-                        <li>Network Components
-                            <i class="fa-solid fa-angle-right"></i>
+                        <li>
+                            Camera Accessories <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>Tripods</li>
+                                <li>Memory Cards</li>
+                                <li>Camera Lenses</li>
+                                <li>Camera Bags</li>
+                            </ul>
                         </li>
-                        <li>Laptop, Tabs & Notebooks
-                            <i class="fa-solid fa-angle-right"></i>
+                        <li>
+                            Network Components <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>Routers</li>
+                                <li>Switches</li>
+                                <li>Modems</li>
+                                <li>LAN Cables</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Laptop, Tabs & Notebooks <i class="fa-solid fa-angle-right"></i>
+                            <ul class="submenu">
+                                <li>Gaming Laptops</li>
+                                <li>Tablets</li>
+                                <li>2-in-1 Laptops</li>
+                                <li>Business Laptops</li>
+                            </ul>
                         </li>
                     </ul>
                     <a href="#">View all</a>
                 </div>
+                 
             </div>
             <div class="parent-ads">
                 <div class="img-slider-container">
@@ -200,30 +356,30 @@
     <!-- Flash Deal -->
     <div class="flash-container">
         <div class="flash-card">
-            <img src="./img/flash-deal.png" alt="flash-deal img">
+            <img src="img/flash-deal.png" alt="flash-deal img">
             <div class="hurry-up">
                 <p>Hurry up !</p>
                 <span>Offer ends in:</span>
             </div>
-          
-          <div class="flash-time-container">
-            <div class="flash-time">
-                <p>23</p>
-                <span class="flash-time-span">Days</span>
+        
+            <div class="flash-time-container">
+                <div class="flash-time">
+                    <p id="days">00</p>
+                    <span class="flash-time-span">Days</span>
+                </div>
+                <div class="flash-time">
+                    <p id="hours">00</p>
+                    <span class="flash-time-span">Hours</span>
+                </div>
+                <div class="flash-time">
+                    <p id="minutes">00</p>
+                    <span class="flash-time-span">Minutes</span>
+                </div>
+                <div class="flash-time">
+                    <p id="seconds">00</p>
+                    <span class="flash-time-span">Seconds</span>
+                </div>
             </div>
-            <div class="flash-time">
-                <p>23</p>
-                <span class="flash-time-span">hours</span>
-            </div>
-            <div class="flash-time">
-                <p>23</p>
-                <span class="flash-time-span">mins</span>
-            </div>
-            <div class="flash-time">
-                <p>23</p>
-                <span class="flash-time-span">sec</span>
-            </div>
-          </div>
         </div>
         <div class="slider-container">
             <button id="prevBtn" class="nav-btn">‹</button>
@@ -231,8 +387,9 @@
                 <div class="card-slider">
                     <div class="card">
                         <div class="child-card">
-                            <img src="img/products/headphone.png" alt="P4 Wireless Bluetooth">
+                            <img class="product-img" src="img/products/headphone.png" alt="P4 Wireless Bluetooth">
                         <p class="discount">-20%</p>
+                        <img class="productcart" src="img/products/inactive.png" alt="productcart">
                         <div class="rating-container">
                             <div class="rating">
                                 <i class="fa-solid fa-star"></i>
@@ -252,6 +409,7 @@
                         <div class="child-card">
                             <img src="img/products/smartwatch.png" alt="smartwatch">
                         <p class="discount">-20%</p>
+                        <img class="productcart" src="img/products/inactive.png" alt="productcart">
                         <img class="producttopright" src="img/products/topright.png" alt="producttop">
                         <div class="rating-container">
                             <div class="rating">
@@ -268,23 +426,25 @@
                         <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card sold-out">
                         <div class="child-card">
-                            <img src="img/products/wireless-headphone.png" alt="wireless-headphone">
-                        <p class="discount">-20%</p>
-                        <div class="rating-container">
-                            <div class="rating">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
+                            <img class="sold-img" src="img/products/wireless-headphone.png" alt="wireless-headphone">
+                            <p class="sold-out-text">Sorry, this item is currently sold out</p>
+                            <p class="discount">-20%</p>
+                            <img class="productcart" src="img/products/inactive.png" alt="productcart">
+                            <div class="rating-container">
+                                <div class="rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="tennumber">(10)</p>
                             </div>
-                            <p class="tennumber">(10)</p>
-                        </div>
-                        <p class="product-name">Morning Mart</p>
-                        <p class="product-description">Lenovo AirPods Pro - Bluetooth Headphone</p>
-                        <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
+                            <p class="product-name">Morning Mart</p>
+                            <p class="product-description">P4 Wireless Bluetooth Headphone with FM Stereo Radio</p>
+                            <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
                         </div>
                     </div>
                     <div class="card">
@@ -311,6 +471,7 @@
                         <div class="child-card">
                             <img src="img/products/smartwatch.png" alt="smartwatch">
                         <p class="discount">-20%</p>
+                        <img class="productcart" src="img/products/inactive.png" alt="productcart">
                         <div class="rating-container">
                             <div class="rating">
                                 <i class="fa-solid fa-star"></i>
@@ -326,9 +487,10 @@
                         <p class="price"><span class="old-price">15$</span> <span class="new-price">12$</span></p>
                         </div>
                     </div>
-                    <div class="card">
+                    <div class="card sold-out">
                         <div class="child-card">
-                            <img src="img/products/watch.png" alt="watch">
+                            <img class="sold-img" src="img/products/watch.png" alt="watch">
+                            <p class="sold-out-text">Sorry, this item is currently sold out</p>
                         <p class="discount">-20%</p>
                         <img class="productcart" src="img/products/inactive.png" alt="productcart">
                         <div class="rating-container">
