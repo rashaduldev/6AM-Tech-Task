@@ -110,9 +110,6 @@ body {
     color: #333;
     text-decoration: none;
 }
-/* .main-navber{
-    max-width: 1140px;
-} */
 /* first head */
 .first-head{
     max-width: 1201px;
@@ -1401,8 +1398,8 @@ body {
     }
     .productcart {
         position: absolute;
-        top: 30%;
-        right: 4%;
+        top: 50%;
+        right: 1%;
         cursor: pointer;
         transform: translate(-50%, -50%);
         opacity: 0;

@@ -32,11 +32,11 @@ $(document).ready(function () {
 // Product Slideber
 $(document).ready(function () {
     let currentIndex = 0;
-    let visibleCards = getVisibleCards(); // Dynamically get visible cards count
+    let visibleCards = getVisibleCards();
     const totalCards = $(".card").length;
     let cardWidth = $(".card").outerWidth(true);
 
-    $("#prevBtn").hide(); // Initially hide left button
+    $("#prevBtn").hide(); 
 
     function updateButtons() {
         $("#prevBtn").toggle(currentIndex > 0);
@@ -68,9 +68,9 @@ $(document).ready(function () {
 
     function getVisibleCards() {
         if ($(window).width() <= 768) {
-            return 2; // Show 2 cards on smaller screens
+            return 2;
         } else {
-            return 4; // Default to 4 on larger screens
+            return 4; 
         }
     }
 
@@ -82,22 +82,21 @@ $(document).ready(function () {
         updateButtons();
     }
 
-    $(window).resize(updateSlider); // Adjust on window resize
+    $(window).resize(updateSlider);
 
     updateButtons();
 });
 
 // Countdown
+$(document).ready(function () {
+    // Countdown Timer
     function startCountdown(targetDate) {
         function updateCountdown() {
             const now = new Date().getTime();
             const timeLeft = targetDate - now;
 
             if (timeLeft <= 0) {
-                document.getElementById("days").innerText = "00";
-                document.getElementById("hours").innerText = "00";
-                document.getElementById("minutes").innerText = "00";
-                document.getElementById("seconds").innerText = "00";
+                $("#days, #hours, #minutes, #seconds").text("00");
                 clearInterval(interval); // Stop the countdown
                 return;
             }
@@ -107,86 +106,53 @@ $(document).ready(function () {
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById("days").innerText = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+            $("#days").text(days.toString().padStart(2, '0'));
+            $("#hours").text(hours.toString().padStart(2, '0'));
+            $("#minutes").text(minutes.toString().padStart(2, '0'));
+            $("#seconds").text(seconds.toString().padStart(2, '0'));
         }
 
         const interval = setInterval(updateCountdown, 1000);
         updateCountdown(); // Initial call to prevent 1-sec delay
     }
 
-    // Set the countdown to a future date (YYYY, MM (0-based), DD, HH, MM, SS)
-    // const countdownEndTime = new Date(2025, 2, 21, 23, 59, 59).getTime();
-    // Define the countdown end time in a human-readable format
     const countdownEndTime = new Date("March 21, 2025 09:20:59").getTime();
     startCountdown(countdownEndTime);
 
-    document.addEventListener("DOMContentLoaded", function () {
-        const dropdownButton = document.getElementById("dropdownButton");
-        const dropdownMenu = document.getElementById("dropdownMenu");
-        const dropdownIcon = dropdownButton.querySelector("i"); // Select the icon
-    
-        // Open/close dropdown on button click
-        dropdownButton.addEventListener("click", function (event) {
-            event.stopPropagation(); // Prevent event bubbling
-            dropdownMenu.classList.toggle("show");
-        });
-    
-        // Change only text on item selection, keeping the icon
-        document.querySelectorAll(".dropdown-menu li").forEach(item => {
-            item.addEventListener("click", function () {
-                dropdownButton.innerHTML = `${this.innerText} <i class="fas fa-chevron-down"></i>`;
-                dropdownMenu.classList.remove("show"); // Close dropdown after selection
-            });
-        });
-    
-        // Close dropdown when clicking outside
-        document.addEventListener("click", function (event) {
-            if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-                dropdownMenu.classList.remove("show");
-            }
-        });
+    // Dropdown Menu
+    const dropdownButton = $("#dropdownButton");
+    const dropdownMenu = $("#dropdownMenu");
+
+    dropdownButton.click(function (event) {
+        event.stopPropagation();
+        dropdownMenu.toggleClass("show");
     });
-    
+
+    $(".dropdown-menu li").click(function () {
+        dropdownButton.html(`${$(this).text()} <i class="fas fa-chevron-down"></i>`);
+        dropdownMenu.removeClass("show");
+    });
+
+    $(document).click(function (event) {
+        if (!dropdownButton.is(event.target) && !dropdownMenu.is(event.target) && dropdownMenu.has(event.target).length === 0) {
+            dropdownMenu.removeClass("show");
+        }
+    });
+
     // Drawer
-    document.addEventListener("DOMContentLoaded", function () {
-        const drawerToggle = document.getElementById("drawer-toggle");
-        const drawer = document.getElementById("drawer");
-        const closeDrawer = document.getElementById("close-drawer");
-        const overlay = document.getElementById("overlay");
-        const categoryToggles = document.querySelectorAll(".category-toggle");
-    
-        // Open Drawer
-        drawerToggle.addEventListener("click", function () {
-            drawer.classList.add("open");
-            overlay.classList.add("active");
-        });
-    
-        // Close Drawer
-        closeDrawer.addEventListener("click", function () {
-            drawer.classList.remove("open");
-            overlay.classList.remove("active");
-        });
-    
-        // Close when clicking outside the drawer
-        overlay.addEventListener("click", function () {
-            drawer.classList.remove("open");
-            overlay.classList.remove("active");
-        });
-    
-        // Toggle Category Menu
-        categoryToggles.forEach(toggle => {
-            toggle.addEventListener("click", function () {
-                const categoryMenu = this.nextElementSibling;
-                if (categoryMenu.style.maxHeight) {
-                    categoryMenu.style.maxHeight = null;
-                } else {
-                    categoryMenu.style.maxHeight = categoryMenu.scrollHeight + "px";
-                }
-                this.classList.toggle("active");
-            });
-        });
+    $("#drawer-toggle").click(function () {
+        $("#drawer").addClass("open");
+        $("#overlay").addClass("active");
     });
-    
+
+    $("#close-drawer, #overlay").click(function () {
+        $("#drawer").removeClass("open");
+        $("#overlay").removeClass("active");
+    });
+
+    $(".category-toggle").click(function () {
+        const categoryMenu = $(this).next();
+        categoryMenu.css("maxHeight", categoryMenu.css("maxHeight") ? null : categoryMenu.prop("scrollHeight") + "px");
+        $(this).toggleClass("active");
+    });
+});
