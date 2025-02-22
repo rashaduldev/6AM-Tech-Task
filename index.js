@@ -89,14 +89,16 @@ $(document).ready(function () {
 
 // Countdown
 $(document).ready(function () {
-    // Countdown Timer
     function startCountdown(targetDate) {
         function updateCountdown() {
             const now = new Date().getTime();
             const timeLeft = targetDate - now;
 
             if (timeLeft <= 0) {
-                $("#days, #hours, #minutes, #seconds").text("00");
+                $("#days").text("00");
+                $("#hours").text("00");
+                $("#minutes").text("00");
+                $("#seconds").text("00");
                 clearInterval(interval); // Stop the countdown
                 return;
             }
@@ -119,40 +121,60 @@ $(document).ready(function () {
     const countdownEndTime = new Date("March 21, 2025 09:20:59").getTime();
     startCountdown(countdownEndTime);
 
-    // Dropdown Menu
-    const dropdownButton = $("#dropdownButton");
-    const dropdownMenu = $("#dropdownMenu");
-
-    dropdownButton.click(function (event) {
-        event.stopPropagation();
-        dropdownMenu.toggleClass("show");
+    // Dropdown functionality
+    $("#dropdownButton").click(function (event) {
+        event.stopPropagation(); // Prevent event bubbling
+        $("#dropdownMenu").toggleClass("show");
     });
 
     $(".dropdown-menu li").click(function () {
-        dropdownButton.html(`${$(this).text()} <i class="fas fa-chevron-down"></i>`);
-        dropdownMenu.removeClass("show");
+        $("#dropdownButton").html($(this).text() + ' <i class="fas fa-chevron-down"></i>');
+        $("#dropdownMenu").removeClass("show");
     });
 
     $(document).click(function (event) {
-        if (!dropdownButton.is(event.target) && !dropdownMenu.is(event.target) && dropdownMenu.has(event.target).length === 0) {
-            dropdownMenu.removeClass("show");
+        if (!$(event.target).closest("#dropdownButton, #dropdownMenu").length) {
+            $("#dropdownMenu").removeClass("show");
         }
     });
+});
 
-    // Drawer
-    $("#drawer-toggle").click(function () {
-        $("#drawer").addClass("open");
-        $("#overlay").addClass("active");
+
+// Drawer
+$(document).ready(function () {
+    const $drawerToggle = $("#drawer-toggle");
+    const $drawer = $("#drawer");
+    const $closeDrawer = $("#close-drawer");
+    const $overlay = $("#overlay");
+    const $categoryToggles = $(".category-toggle");
+
+    // Open Drawer
+    $drawerToggle.click(function () {
+        $drawer.addClass("open");
+        $overlay.addClass("active");
     });
 
-    $("#close-drawer, #overlay").click(function () {
-        $("#drawer").removeClass("open");
-        $("#overlay").removeClass("active");
+    // Close Drawer
+    $closeDrawer.click(function () {
+        $drawer.removeClass("open");
+        $overlay.removeClass("active");
     });
 
-    $(".category-toggle").click(function () {
-        const categoryMenu = $(this).next();
-        categoryMenu.css("maxHeight", categoryMenu.css("maxHeight") ? null : categoryMenu.prop("scrollHeight") + "px");
+    // Close when clicking outside the drawer
+    $overlay.click(function () {
+        $drawer.removeClass("open");
+        $overlay.removeClass("active");
+    });
+
+    // Toggle Category Menu
+    $categoryToggles.click(function () {
+        const $categoryMenu = $(this).next();
+        if ($categoryMenu.css("max-height") !== "0px") {
+            $categoryMenu.css("max-height", "0px");
+        } else {
+            $categoryMenu.css("max-height", $categoryMenu.prop("scrollHeight") + "px");
+        }
         $(this).toggleClass("active");
     });
 });
+
